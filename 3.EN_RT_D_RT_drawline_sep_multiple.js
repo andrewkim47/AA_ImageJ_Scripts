@@ -1,9 +1,10 @@
 run("8-bit");
-code = 'EN_C1_C_RT_TIFF';
+code = 'EN_RT_D_RT_TIFF';
 fdir = '/Users/andrewkim/Documents/AA_Discharge/TIFFS/' + code +'/Linescan/';
 //center coordinate
 
-cent = getCenter(275, 255, 500, 500);
+cent = getCenter(274, 284, 475, 475);
+
 x0 = cent[0]; 
 y0 = cent[1];
 ra = 500;
@@ -71,4 +72,6 @@ File.close(Lfil);
 roiManager("Show All");
 run("Flatten","slice");
 saveAs("PNG", fdir + "lines_sep.png");
+
+
 

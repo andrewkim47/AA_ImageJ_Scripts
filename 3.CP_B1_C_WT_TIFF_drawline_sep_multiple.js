@@ -1,9 +1,9 @@
 run("8-bit");
-code = 'EN_C1_C_RT_TIFF';
+code = 'CP_B1_C_WT_TIFF';
 fdir = '/Users/andrewkim/Documents/AA_Discharge/TIFFS/' + code +'/Linescan/';
 //center coordinate
 
-cent = getCenter(275, 255, 500, 500);
+cent = getCenter(252, 279, 496, 496);
 x0 = cent[0]; 
 y0 = cent[1];
 ra = 500;
@@ -19,7 +19,6 @@ function getCenter(x1,y1,w1,h1){
 }
 function drawLines(x0,y0,ra,lw){
 // 	angles = newArray(-1.0,-0.75,-0.5,-0.25,0,0.25,0.50,0.75,1.0);
-	
 	dx = 2.0/nlines;
 	angles = newArray(nlines+1);
 	angles[0] = -1;
@@ -71,4 +70,6 @@ File.close(Lfil);
 roiManager("Show All");
 run("Flatten","slice");
 saveAs("PNG", fdir + "lines_sep.png");
+
+
 

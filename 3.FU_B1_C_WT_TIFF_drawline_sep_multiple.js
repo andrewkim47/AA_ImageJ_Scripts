@@ -1,9 +1,9 @@
 run("8-bit");
-code = 'EN_C1_C_RT_TIFF';
+code = 'FU_B1_C_WT_TIFF';
 fdir = '/Users/andrewkim/Documents/AA_Discharge/TIFFS/' + code +'/Linescan/';
 //center coordinate
 
-cent = getCenter(275, 255, 500, 500);
+cent = getCenter(223, 259, 498, 498);
 x0 = cent[0]; 
 y0 = cent[1];
 ra = 500;
@@ -54,9 +54,9 @@ for (i=0; i<numpoints; i++){
 print(Lfil,header);
 
 for (n = 1; n <= nSlices(); n++) {
+	setSlice(n);
 	for(k=0; k<nlines; k++){
 		roiManager("Select", k);
-		setSlice(n);
 		entry = "N"+(n-1)+"L"+k;	
 		profile = getProfile();
 		numpoints = profile.length;
@@ -71,4 +71,6 @@ File.close(Lfil);
 roiManager("Show All");
 run("Flatten","slice");
 saveAs("PNG", fdir + "lines_sep.png");
+
+
 

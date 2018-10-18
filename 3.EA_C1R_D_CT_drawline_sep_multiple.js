@@ -1,9 +1,10 @@
 run("8-bit");
-code = 'EN_C1_C_RT_TIFF';
+
+code = 'EA_C1R_D_CT_TIFF';
 fdir = '/Users/andrewkim/Documents/AA_Discharge/TIFFS/' + code +'/Linescan/';
 //center coordinate
 
-cent = getCenter(275, 255, 500, 500);
+cent = getCenter(290, 247, 476, 476);
 x0 = cent[0]; 
 y0 = cent[1];
 ra = 500;
